@@ -7,10 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link rel="shortcut icon" href="/assets/img/img_login/Capa_2.svg" type="image/x-icon">
+    <title>Add Task</title>
     <link rel="stylesheet" href="/css/header_taskbar.css">
     <link rel="stylesheet" href="/css/header_taskbar_responsive.css">
     <link rel="stylesheet" href="/css/add_task.css">
+    <link rel="stylesheet" href="/css/add_task2.css">
 
 </head>
 
@@ -23,7 +25,7 @@
             <p class="zwölf">Kanban Project Management Tool</p>
         </div>
         <div class="zwei">
-            <img class="drei" src="/assets/img/header_navbar_img/image.png" alt="">
+            <a href="/html/help.html"><img class="drei" src="/assets/img/header_navbar_img/image.png" alt=""></a>
             <div class="vier" id="dropdownButton" onclick="showDropDown()">
                 <p id="profile-icon">G</p>
                 <div id="dropdown" class="fünf" style="display: none;">
@@ -79,7 +81,7 @@
                     <div class="first-container-formatted part-3">
                         <label for="assigned to">Assigned To</label>
                         <div class="dropdown-format">
-                            <div class="dropdown-toggle dropdown-start" onclick="toggleDropdown()">
+                            <div class="dropdown-toggle dropdown-start" onclick="toggleDropdowns()">
                                 <span class="dropdown-start">Select contacts to assign</span>
                                 <span class="dropdown-start">▼</span>
                             </div>
@@ -105,7 +107,7 @@
                             <div class="prio-buttons">
                                 <img class="prio-button" id="urgent" src="/assets/img/img_add_task/urgent_standart.png"
                                     alt="Urgent">
-                                <img class="prio-button" id="medium" src="/assets/img/img_add_task/medium_standart.png"
+                                <img class="prio-button" id="medium" src="/assets/img/img_add_task/medium_clicked.png"
                                     alt="Medium">
                                 <img class="prio-button" id="low" src="/assets/img/img_add_task/low_standart.png"
                                     alt="Low">
@@ -125,7 +127,7 @@
                             <div class="input-wrapper">
                                 <input class="input-style-1 img-for-subtask" placeholder="Add new subtask" type="text"
                                     id="subtask-input">
-                                <div id="add-subtask-btn" onclick="addSubtask()"></div>
+                                <div id="add-subtask-btn" onclick="pushAndDisplaySubtask()"></div>
                             </div>
                             <ul id="subtask-list" class="subtask-list"></ul>
                         </div>
@@ -136,7 +138,7 @@
     </div>
     <div class="bottom-section">
         <div>
-            <p><span class="red">*</span>This field is required</p>
+            <p id="findTaskResponsive"><span class="red" id="findTask">*</span>This field is required</p>
         </div>
         <div class="buttons">
             <button class="clear" onclick="resetInput()">Clear <img src="/assets/img/img_add_task/cross.png"
@@ -150,7 +152,14 @@
     <script src="/js/add_task.js"></script>
     <script src="/js/header_taskbar.js"></script>
     <script src="/js/firebase_add_task.js"></script>
+    <script src="/js/firebase_add_task2.js"></script>
     <script src="/js/html_functions.js"></script>
+    <script src="/js/firebase_board.js"></script>
+    <script src="/js/board_firebase_logic.js"></script>
+    <script src="/js/board_subtasks.js"></script>
+    <script src="/js/board_popup.js"></script>
+    <script src="/js/find_Tasks.js"></script>
+    <script src="/js/prio-buttons.js"></script>
 </body>
 
 </html>
